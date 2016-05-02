@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/Chopper.fbx</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/canyon.png</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/grass.png</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/verticalroad.png</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/LBCornerroad.png</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/LTCornerroad.png</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/RBCornerroad.png</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/RTCornerroad.png</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/horizontalroad.png</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/grasstile.png</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/basichouse.fbx</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/basichouse_texture1.png</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/basichouse_texture2.png</File>
+  </SourceFiles>
+</SourceFileCollection>
