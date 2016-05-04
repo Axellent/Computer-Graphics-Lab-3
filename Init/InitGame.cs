@@ -14,13 +14,13 @@ namespace NAJ_Lab2.Init {
         private SystemManager sm = SystemManager.Instance;
 
         public InitGame(ECSEngine engine) {
-            sm.RegisterSystem("Game", new TransformSystem());
-            sm.RegisterSystem("Game", new ModelRenderSystem());
-
             InitKeyboard();
             InitChopper(engine);
             InitCamera(engine);
             InitTerrain(engine);
+
+            sm.RegisterSystem("Game", new TransformSystem());
+            sm.RegisterSystem("Game", new ModelRenderSystem());
 
             SceneManager.Instance.SetActiveScene("Game");
             SystemManager.Instance.Category = "Game";
@@ -48,7 +48,7 @@ namespace NAJ_Lab2.Init {
             sm.RegisterSystem("Game", new ChopperControlSystem(engine));
 
             Entity chopper = EntityFactory.Instance.NewEntityWithTag("Chopper");
-            ModelComponent modelComp = new ModelComponent(engine.LoadContent<Model>("Chopper"), true);
+            ModelComponent modelComp = new ModelComponent(engine.LoadContent<Model>("Chopper"), true, false);
             ModelRenderSystem.AddMeshTransform(ref modelComp, 1, Matrix.CreateRotationY(0.2f));
             ModelRenderSystem.AddMeshTransform(ref modelComp, 3, Matrix.CreateRotationY(0.5f));
             ComponentManager.Instance.AddComponentToEntity(chopper, modelComp);

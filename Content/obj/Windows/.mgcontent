@@ -17,5 +17,7 @@
     <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/basichouse.fbx</File>
     <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/basichouse_texture1.png</File>
     <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/basichouse_texture2.png</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/effects/diffuse_lighting.fx</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/effects/texturing_shader.fx</File>
   </SourceFiles>
 </SourceFileCollection>

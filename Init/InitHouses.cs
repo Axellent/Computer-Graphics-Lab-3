@@ -11,8 +11,8 @@ namespace NAJ_Lab2.Init {
     class InitHouses {
         public InitHouses(ECSEngine engine) {
             Random rnd = new Random();
-            ModelComponent house = new ModelComponent(engine.LoadContent<Model>("basichouse"), true);
-            ModelComponent house2 = new ModelComponent(engine.LoadContent<Model>("basichouse"), true);
+            ModelComponent house = new ModelComponent(engine.LoadContent<Model>("basichouse"), true, true);
+            ModelComponent house2 = new ModelComponent(engine.LoadContent<Model>("basichouse"), true, true);
             List<Entity> sceneEntities = SceneManager.Instance.GetActiveScene().GetAllEntities();
             Entity terrain = ComponentManager.Instance.GetEntityWithTag("Terrain", sceneEntities);
             TerrainMapComponent tcomp = ComponentManager.Instance.GetEntityComponent<TerrainMapComponent>(terrain);

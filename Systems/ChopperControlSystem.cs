@@ -26,10 +26,10 @@ namespace NAJ_Lab2 {
             Entity terrain = ComponentManager.Instance.GetEntityWithTag("Terrain", sceneEntities);
             TerrainMapComponent tcomp = ComponentManager.Instance.GetEntityComponent<TerrainMapComponent>(terrain);
 
-            engine.SetWindowTitle("Num Chunks in camre frustrum:" + tcomp.numChunksInView + "    Num Models in camera frustrum:" + modelCount.numModelsInView);
+            engine.SetWindowTitle("Num Chunks in camera frustrum:" + tcomp.numChunksInView + "    Num Models in camera frustrum:" + modelCount.numModelsInView);
 
             //lock the model to groundheight
-            t.position = new Vector3(t.position.X, 1.7f + TerrainMapRenderSystem.GetTerrainHeight(tcomp, t.position.X, Math.Abs(t.position.Z)), t.position.Z);
+            //t.position = new Vector3(t.position.X, 1.7f + TerrainMapRenderSystem.GetTerrainHeight(tcomp, t.position.X, Math.Abs(t.position.Z)), t.position.Z);
 
             //set the mesh transforms to zero
             ModelRenderSystem.SetMeshTransform(ref chopModel, 1, Matrix.CreateRotationY(0.0f));
