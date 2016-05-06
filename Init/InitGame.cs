@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Content;
-using GameEngine;
 using Microsoft.Xna.Framework.Input;
+using GameEngine;
 
-namespace NAJ_Lab2.Init {
+namespace NAJ_Lab3 {
     class InitGame {
         private SystemManager sm = SystemManager.Instance;
 
@@ -48,7 +44,7 @@ namespace NAJ_Lab2.Init {
             sm.RegisterSystem("Game", new ChopperControlSystem(engine));
 
             Entity chopper = EntityFactory.Instance.NewEntityWithTag("Chopper");
-            ModelComponent modelComp = new ModelComponent(engine.LoadContent<Model>("Chopper"), true, false);
+            ModelComponent modelComp = new ModelComponent(engine.LoadContent<Model>("models/chopper"), true, false);
             ModelRenderSystem.AddMeshTransform(ref modelComp, 1, Matrix.CreateRotationY(0.2f));
             ModelRenderSystem.AddMeshTransform(ref modelComp, 3, Matrix.CreateRotationY(0.5f));
             ComponentManager.Instance.AddComponentToEntity(chopper, modelComp);
@@ -84,11 +80,26 @@ namespace NAJ_Lab2.Init {
             SceneManager.Instance.AddEntityToSceneOnLayer("Game", 6, camera);
         }
 
+        private void InitSkybox(ECSEngine engine) {
+            sm.RegisterSystem("Game", new SkyboxSystem());
+
+            Entity skyboxEnt = EntityFactory.Instance.NewEntityWithTag("Skybox");
+            SkyboxComponent skybox = new SkyboxComponent(engine.LoadContent<Model>("skyboxes/cube"),
+                engine.LoadContent<TextureCube>("skyboxes/Sunset"),
+                engine.LoadContent<Effect>("skyboxes/Skybox"));
+
+            ComponentManager.Instance.AddComponentToEntity(skyboxEnt, skybox);
+
+            SceneManager.Instance.AddEntityToSceneOnLayer("Game", 1, skyboxEnt);
+        }
+
         private void InitTerrain(ECSEngine engine) {
             sm.RegisterSystem("Game", new TerrainMapRenderSystem());
 
             Texture2D terrainTex = engine.LoadContent<Texture2D>("Canyon");
-            Texture2D defaultTex = engine.LoadContent<Texture2D>("grasstile");
+            Texture2D defaultTex = engine.LoadContent<Texture2D>("textures/grasstile");
+            Texture2D verticalRoad = engine.LoadContent<Texture2D>("textures/verticalroad");
+            Texture2D horizontalRoad = engine.LoadContent<Texture2D>("textures/horizontalroad");
 
             Entity terrain = EntityFactory.Instance.NewEntityWithTag("Terrain");
             TerrainMapComponent t = new TerrainMapComponent(engine.GetGraphicsDevice(), terrainTex, defaultTex, 10);
@@ -96,42 +107,42 @@ namespace NAJ_Lab2.Init {
 
             TerrainMapRenderSystem.LoadHeightMap(ref t, terrainTex, defaultTex, engine.GetGraphicsDevice());
 
-            t.SetTextureToChunk(0, engine.LoadContent<Texture2D>("LTCornerroad"));
-            t.SetTextureToChunk(1, engine.LoadContent<Texture2D>("verticalroad"));
-            t.SetTextureToChunk(2, engine.LoadContent<Texture2D>("verticalroad"));
-            t.SetTextureToChunk(3, engine.LoadContent<Texture2D>("verticalroad"));
-            t.SetTextureToChunk(4, engine.LoadContent<Texture2D>("verticalroad"));
-            t.SetTextureToChunk(5, engine.LoadContent<Texture2D>("verticalroad"));
-            t.SetTextureToChunk(6, engine.LoadContent<Texture2D>("verticalroad"));
-            t.SetTextureToChunk(7, engine.LoadContent<Texture2D>("verticalroad"));
-            t.SetTextureToChunk(8, engine.LoadContent<Texture2D>("verticalroad"));
-            t.SetTextureToChunk(9, engine.LoadContent<Texture2D>("LBCornerroad"));
-            t.SetTextureToChunk(10, engine.LoadContent<Texture2D>("horizontalroad"));
-            t.SetTextureToChunk(19, engine.LoadContent<Texture2D>("horizontalroad"));
-            t.SetTextureToChunk(20, engine.LoadContent<Texture2D>("horizontalroad"));
-            t.SetTextureToChunk(29, engine.LoadContent<Texture2D>("horizontalroad"));
-            t.SetTextureToChunk(30, engine.LoadContent<Texture2D>("horizontalroad"));
-            t.SetTextureToChunk(39, engine.LoadContent<Texture2D>("horizontalroad"));
-            t.SetTextureToChunk(40, engine.LoadContent<Texture2D>("horizontalroad"));
-            t.SetTextureToChunk(49, engine.LoadContent<Texture2D>("horizontalroad"));
-            t.SetTextureToChunk(50, engine.LoadContent<Texture2D>("horizontalroad"));
-            t.SetTextureToChunk(59, engine.LoadContent<Texture2D>("horizontalroad"));
-            t.SetTextureToChunk(60, engine.LoadContent<Texture2D>("horizontalroad"));
-            t.SetTextureToChunk(69, engine.LoadContent<Texture2D>("horizontalroad"));
-            t.SetTextureToChunk(70, engine.LoadContent<Texture2D>("horizontalroad"));
-            t.SetTextureToChunk(79, engine.LoadContent<Texture2D>("horizontalroad"));
-            t.SetTextureToChunk(80, engine.LoadContent<Texture2D>("horizontalroad"));
-            t.SetTextureToChunk(89, engine.LoadContent<Texture2D>("horizontalroad"));
-            t.SetTextureToChunk(90, engine.LoadContent<Texture2D>("RTCornerroad"));
-            t.SetTextureToChunk(99, engine.LoadContent<Texture2D>("RBCornerroad"));
-            t.SetTextureToChunk(98, engine.LoadContent<Texture2D>("verticalroad"));
-            t.SetTextureToChunk(97, engine.LoadContent<Texture2D>("verticalroad"));
-            t.SetTextureToChunk(96, engine.LoadContent<Texture2D>("verticalroad"));
-            t.SetTextureToChunk(95, engine.LoadContent<Texture2D>("verticalroad"));
-            t.SetTextureToChunk(94, engine.LoadContent<Texture2D>("verticalroad"));
-            t.SetTextureToChunk(93, engine.LoadContent<Texture2D>("verticalroad"));
-            t.SetTextureToChunk(92, engine.LoadContent<Texture2D>("verticalroad"));
-            t.SetTextureToChunk(91, engine.LoadContent<Texture2D>("verticalroad"));
+            t.SetTextureToChunk(0, engine.LoadContent<Texture2D>("textures/LTCornerroad"));
+            t.SetTextureToChunk(1, verticalRoad);
+            t.SetTextureToChunk(2, verticalRoad);
+            t.SetTextureToChunk(3, verticalRoad);
+            t.SetTextureToChunk(4, verticalRoad);
+            t.SetTextureToChunk(5, verticalRoad);
+            t.SetTextureToChunk(6, verticalRoad);
+            t.SetTextureToChunk(7, verticalRoad);
+            t.SetTextureToChunk(8, verticalRoad);
+            t.SetTextureToChunk(9, verticalRoad);
+            t.SetTextureToChunk(10, horizontalRoad);
+            t.SetTextureToChunk(19, horizontalRoad);
+            t.SetTextureToChunk(20, horizontalRoad);
+            t.SetTextureToChunk(29, horizontalRoad);
+            t.SetTextureToChunk(30, horizontalRoad);
+            t.SetTextureToChunk(39, horizontalRoad);
+            t.SetTextureToChunk(40, horizontalRoad);
+            t.SetTextureToChunk(49, horizontalRoad);
+            t.SetTextureToChunk(50, horizontalRoad);
+            t.SetTextureToChunk(59, horizontalRoad);
+            t.SetTextureToChunk(60, horizontalRoad);
+            t.SetTextureToChunk(69, horizontalRoad);
+            t.SetTextureToChunk(70, horizontalRoad);
+            t.SetTextureToChunk(79, horizontalRoad);
+            t.SetTextureToChunk(80, horizontalRoad);
+            t.SetTextureToChunk(89, horizontalRoad);
+            t.SetTextureToChunk(90, engine.LoadContent<Texture2D>("textures/RTCornerroad"));
+            t.SetTextureToChunk(99, engine.LoadContent<Texture2D>("textures/RBCornerroad"));
+            t.SetTextureToChunk(98, verticalRoad);
+            t.SetTextureToChunk(97, verticalRoad);
+            t.SetTextureToChunk(96, verticalRoad);
+            t.SetTextureToChunk(95, verticalRoad);
+            t.SetTextureToChunk(94, verticalRoad);
+            t.SetTextureToChunk(93, verticalRoad);
+            t.SetTextureToChunk(92, verticalRoad);
+            t.SetTextureToChunk(91, verticalRoad);
 
             tf.world = Matrix.CreateTranslation(0, 0, 0);
             tf.position = Vector3.Zero;

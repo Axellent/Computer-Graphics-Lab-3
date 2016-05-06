@@ -7,7 +7,7 @@ using GameEngine.InputDefs;
 using GameEngine;
 using Microsoft.Xna.Framework;
 
-namespace NAJ_Lab2 {
+namespace NAJ_Lab3 {
     class ChopperControlSystem : IUpdateSystem {
         ECSEngine engine;
 

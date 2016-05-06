@@ -1,7 +1,6 @@
 ﻿using System;
-using GameEngine;
 
-namespace NAJ_Lab2
+namespace NAJ_Lab3
 {
 #if WINDOWS || LINUX
     /// <summary>

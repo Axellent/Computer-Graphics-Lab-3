@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using GameEngine;
 
-namespace NAJ_Lab2.Init {
+namespace NAJ_Lab3 {
     class InitHouses {
         public InitHouses(ECSEngine engine) {
             Random rnd = new Random();
-            ModelComponent house = new ModelComponent(engine.LoadContent<Model>("basichouse"), true, true);
-            ModelComponent house2 = new ModelComponent(engine.LoadContent<Model>("basichouse"), true, true);
+            ModelComponent house = new ModelComponent(engine.LoadContent<Model>("models/basichouse"), true, true);
+            ModelComponent house2 = new ModelComponent(engine.LoadContent<Model>("models/basichouse"), true, true);
             List<Entity> sceneEntities = SceneManager.Instance.GetActiveScene().GetAllEntities();
             Entity terrain = ComponentManager.Instance.GetEntityWithTag("Terrain", sceneEntities);
             TerrainMapComponent tcomp = ComponentManager.Instance.GetEntityComponent<TerrainMapComponent>(terrain);
@@ -21,12 +18,12 @@ namespace NAJ_Lab2.Init {
                 Entity e = EntityFactory.Instance.NewEntity();
 
                 if (i < 50) {
-                    house.SetTexture(engine.LoadContent<Texture2D>("basichouse_texture1"));
+                    house.SetTexture(engine.LoadContent<Texture2D>("textures/basichouse_texture1"));
                     house.textured = true;
                     ComponentManager.Instance.AddComponentToEntity(e, house);
                 }
                 else {
-                    house2.SetTexture(engine.LoadContent<Texture2D>("basichouse_texture2"));
+                    house2.SetTexture(engine.LoadContent<Texture2D>("textures/basichouse_texture2"));
                     house2.textured = true;
                     ComponentManager.Instance.AddComponentToEntity(e, house2);
                 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using GameEngine.InputDefs;
 using GameEngine;
 
-namespace NAJ_Lab2
+namespace NAJ_Lab3
 {
     class Utilities
     {

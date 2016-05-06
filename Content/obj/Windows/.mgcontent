@@ -4,20 +4,34 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/Chopper.fbx</File>
     <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/canyon.png</File>
-    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/grass.png</File>
-    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/verticalroad.png</File>
-    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/LBCornerroad.png</File>
-    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/LTCornerroad.png</File>
-    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/RBCornerroad.png</File>
-    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/RTCornerroad.png</File>
-    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/horizontalroad.png</File>
-    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/grasstile.png</File>
-    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/basichouse.fbx</File>
-    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/basichouse_texture1.png</File>
-    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/basichouse_texture2.png</File>
     <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/effects/diffuse_lighting.fx</File>
     <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/effects/texturing_shader.fx</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/effects/normalmap.fx</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/effects/reflection.fx</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/effects/skybox.fx</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/effects/textured.fx</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/models/basichouse.fbx</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/models/Chopper.fbx</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/models/smallcube.fbx</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/models/smallcube2.fbx</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/models/sphere_mapped.fbx</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/models/Untitled.png</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/skyboxes/cube.fbx</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/skyboxes/skybox.fx</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/skyboxes/Sunset.dds</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/textures/basichouse_texture1.png</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/textures/basichouse_texture2.png</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/textures/grass.png</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/textures/grasstile.png</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/textures/horizontalroad.png</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/textures/LBCornerroad.png</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/textures/LTCornerroad.png</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/textures/normalmap.png</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/textures/RBCornerroad.png</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/textures/rocktex.png</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/textures/rocktex_alpha.png</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/textures/RTCornerroad.png</File>
+    <File>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/textures/verticalroad.png</File>
   </SourceFiles>
 </SourceFileCollection>

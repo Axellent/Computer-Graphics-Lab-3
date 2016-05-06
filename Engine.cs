@@ -1,15 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using GameEngine;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Content;
-using NAJ_Lab2.Init;
 
-namespace NAJ_Lab2
+namespace NAJ_Lab3
 {
     class Engine : ECSEngine
     {
