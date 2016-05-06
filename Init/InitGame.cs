@@ -13,6 +13,7 @@ namespace NAJ_Lab3 {
             InitKeyboard();
             InitChopper(engine);
             InitCamera(engine);
+            InitCube(engine);
             InitSkybox(engine);
             InitTerrain(engine);
 
@@ -81,13 +82,46 @@ namespace NAJ_Lab3 {
             SceneManager.Instance.AddEntityToSceneOnLayer("Game", 6, camera);
         }
 
-        private void InitSkybox(ECSEngine engine)
-        {
-            //sm.RegisterSystem("Game", new SkyboxSystem());
+        private void InitSkybox(ECSEngine engine){
+            sm.RegisterSystem("Game", new SkyboxSystem());
+
             Entity skyboxEnt = EntityFactory.Instance.NewEntityWithTag("Skybox");
-            SkyboxComponent skyboxComp = new SkyboxComponent(engine.LoadContent<Model>("Skyboxes/cube"),engine.LoadContent<TextureCube>("Skyboxes/Sunset"), engine.LoadContent <Effect>("Skyboxes/Skybox"),500);
+            SkyboxComponent skyboxComp = new SkyboxComponent(engine.LoadContent<Model>("skyboxes/cube"),
+                engine.LoadContent<TextureCube>("skyboxes/Sunset"),
+                engine.LoadContent <Effect>("skyboxes/skybox"), 500);
+
             ComponentManager.Instance.AddComponentToEntity(skyboxEnt, skyboxComp);
             SceneManager.Instance.AddEntityToSceneOnLayer("Game", 0, skyboxEnt);
+        }
+
+        private void InitCube(ECSEngine engine) {
+            sm.RegisterSystem("Game", new EnvironmentmappingSystem());
+
+            GraphicsDevice graphicsDevice = engine.GetGraphicsDevice();
+            RenderTargetCube renderTargetCube = new RenderTargetCube(graphicsDevice, 256, false, graphicsDevice.DisplayMode.Format, DepthFormat.Depth24);
+
+            RenderTarget2D renderTarget = new RenderTarget2D(
+                graphicsDevice,
+                graphicsDevice.PresentationParameters.BackBufferWidth,
+                graphicsDevice.PresentationParameters.BackBufferHeight,
+                false,
+                graphicsDevice.PresentationParameters.BackBufferFormat,
+                DepthFormat.Depth24);
+
+            Entity cubeEnt = EntityFactory.Instance.NewEntityWithTag("Cube");
+            EnvironmentmappingComponent envComp = new EnvironmentmappingComponent(renderTarget, renderTargetCube);
+            ModelComponent modelComp = new ModelComponent(engine.LoadContent<Model>("models/sphere_mapped"), false, false);
+            modelComp.effect = engine.LoadContent<Effect>("effects/reflection");
+
+            TransformComponent tComp = new TransformComponent();
+            tComp.position = new Vector3(5.0f, 5.0f, 2.0f);
+            tComp.vRotation = new Vector3(0, 0, 0);
+            tComp.world = Matrix.Identity;
+
+            ComponentManager.Instance.AddComponentToEntity(cubeEnt, envComp);
+            ComponentManager.Instance.AddComponentToEntity(cubeEnt, modelComp);
+            ComponentManager.Instance.AddComponentToEntity(cubeEnt, tComp);
+            SceneManager.Instance.AddEntityToSceneOnLayer("Game", 3, cubeEnt);
         }
 
         private void InitTerrain(ECSEngine engine) {
