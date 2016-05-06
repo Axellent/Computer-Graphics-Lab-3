@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/textures/basichouse_texture1.png</SourceFile>
-  <SourceTime>2016-04-21T10:37:40.8862961+01:00</SourceTime>
-  <DestFile>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/bin/Windows/textures/basichouse_texture1.xnb</DestFile>
-  <DestTime>2016-05-06T00:36:33.035768+01:00</DestTime>
+  <SourceFile>D:/lab3/Lab3/Content/textures/basichouse_texture1.png</SourceFile>
+  <SourceTime>2016-05-06T11:23:44.4001822+02:00</SourceTime>
+  <DestFile>D:/lab3/Lab3/Content/bin/Windows/textures/basichouse_texture1.xnb</DestFile>
+  <DestTime>2016-05-06T11:24:50.5269645+02:00</DestTime>
   <Importer>TextureImporter</Importer>
-  <ImporterTime>2016-03-30T07:36:08+01:00</ImporterTime>
+  <ImporterTime>2016-03-30T08:36:08+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
-  <ProcessorTime>2016-03-30T07:36:08+01:00</ProcessorTime>
+  <ProcessorTime>2016-03-30T08:36:08+02:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>255,0,255,255</Value>

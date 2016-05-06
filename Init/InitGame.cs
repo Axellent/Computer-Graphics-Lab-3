@@ -13,6 +13,7 @@ namespace NAJ_Lab3 {
             InitKeyboard();
             InitChopper(engine);
             InitCamera(engine);
+            InitSkybox(engine);
             InitTerrain(engine);
 
             sm.RegisterSystem("Game", new TransformSystem());
@@ -75,22 +76,18 @@ namespace NAJ_Lab3 {
             ComponentManager.Instance.AddComponentToEntity(camera, cc);
             ComponentManager.Instance.AddComponentToEntity(camera, new TransformComponent());
             CameraSystem.SetTargetEntity("Chopper");
-            CameraSystem.SetFarClipPlane(ref cc, 500);
+            CameraSystem.SetFarClipPlane(ref cc, 1000);
 
             SceneManager.Instance.AddEntityToSceneOnLayer("Game", 6, camera);
         }
 
-        private void InitSkybox(ECSEngine engine) {
-            sm.RegisterSystem("Game", new SkyboxSystem());
-
+        private void InitSkybox(ECSEngine engine)
+        {
+            //sm.RegisterSystem("Game", new SkyboxSystem());
             Entity skyboxEnt = EntityFactory.Instance.NewEntityWithTag("Skybox");
-            SkyboxComponent skybox = new SkyboxComponent(engine.LoadContent<Model>("skyboxes/cube"),
-                engine.LoadContent<TextureCube>("skyboxes/Sunset"),
-                engine.LoadContent<Effect>("skyboxes/Skybox"));
-
-            ComponentManager.Instance.AddComponentToEntity(skyboxEnt, skybox);
-
-            SceneManager.Instance.AddEntityToSceneOnLayer("Game", 1, skyboxEnt);
+            SkyboxComponent skyboxComp = new SkyboxComponent(engine.LoadContent<Model>("Skyboxes/cube"),engine.LoadContent<TextureCube>("Skyboxes/Sunset"), engine.LoadContent <Effect>("Skyboxes/Skybox"),500);
+            ComponentManager.Instance.AddComponentToEntity(skyboxEnt, skyboxComp);
+            SceneManager.Instance.AddEntityToSceneOnLayer("Game", 0, skyboxEnt);
         }
 
         private void InitTerrain(ECSEngine engine) {

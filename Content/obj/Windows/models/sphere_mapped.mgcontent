@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/models/sphere_mapped.fbx</SourceFile>
-  <SourceTime>2016-04-27T14:48:41.1921989+01:00</SourceTime>
-  <DestFile>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/bin/Windows/models/sphere_mapped.xnb</DestFile>
-  <DestTime>2016-05-06T00:36:32.5297391+01:00</DestTime>
+  <SourceFile>D:/lab3/Lab3/Content/models/sphere_mapped.fbx</SourceFile>
+  <SourceTime>2016-05-06T11:23:44.3481792+02:00</SourceTime>
+  <DestFile>D:/lab3/Lab3/Content/bin/Windows/models/sphere_mapped.xnb</DestFile>
+  <DestTime>2016-05-06T11:24:50.0339363+02:00</DestTime>
   <Importer>FbxImporter</Importer>
-  <ImporterTime>2016-03-30T07:36:08+01:00</ImporterTime>
+  <ImporterTime>2016-03-30T08:36:08+02:00</ImporterTime>
   <Processor>ModelProcessor</Processor>
-  <ProcessorTime>2016-03-30T07:36:08+01:00</ProcessorTime>
+  <ProcessorTime>2016-03-30T08:36:08+02:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>0,0,0,0</Value>
@@ -66,7 +66,7 @@
   </Parameters>
   <Dependencies />
   <BuildAsset>
-    <string>C:/Users/Axel/Documents/Visual Studio 2015/Projects/NAJ_Lab3/Lab3/Content/bin/Windows/models/Untitled_0.xnb</string>
+    <string>D:/lab3/Lab3/Content/bin/Windows/models/Untitled_0.xnb</string>
   </BuildAsset>
   <BuildOutput />
 </PipelineBuildEvent>
